@@ -4,7 +4,7 @@ import express from "express";
 import fs from "fs";
 
 const app = express();
-const port = 3000;
+const port = 3010;
 
 const wordFile = fs.readFileSync("wordlist.txt", "utf8");
 const wordList = wordFile.split("\n");

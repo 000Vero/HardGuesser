@@ -67,31 +67,30 @@ async function newWord() {
     for (let i = 0; i < currentWord.length; i++) wordEl.innerHTML += `<td><input type="text" data-pos="${i}"></input></td>`
 
     for (let child of wordEl.children) {
-        child.onkeypress = function() {
-
-            if (!child.children[0].readOnly) child.children[0].value = "";
-
-            let pos = parseInt(child.children[0].dataset.pos);
-
-            if (pos < currentWord.length - 1) {
-
-                for (let i = 1; i < currentWord.length - pos; i++) {
-
-                    if (!wordEl.children[pos + i].children[0].readOnly) {
-                        wordEl.children[pos + i].children[0].focus();
-                        break;
-                    };
-
-                };
-
-            };
-        };
 
         child.oninput = async function(event) {
 
             let pos = parseInt(child.children[0].dataset.pos);
 
             if (event.inputType != "deleteContentBackward") {
+                if (!child.children[0].readOnly) child.children[0].value = child.children[0].value[child.children[0].value.length - 1];
+
+                if (pos < currentWord.length - 1) {
+
+                    for (let i = 1; i < currentWord.length - pos; i++) {
+    
+                        if (!wordEl.children[pos + i].children[0].readOnly) {
+                            let inputEl = wordEl.children[pos + i].children[0];
+                            setTimeout(() => {
+                                inputEl.focus();
+                            }, 0);
+                            break;
+                        };
+    
+                    };
+    
+                };
+
                 await tryGuess();
 
                 return;
@@ -195,6 +194,10 @@ async function tryGuess() {
             }
         }, 650);
         return;
+    }
+
+    for (ch of wordEl.children) {
+        ch.style.borderColor = "green";
     }
 
     let tempPoints = basePoints - (helpCount * 10);

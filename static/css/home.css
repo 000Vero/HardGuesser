@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body, html {
+    background-color: rgb(13, 12, 19);
+    height: 100%;
+}
+
+.centered {
+    text-align: center;
+}
+
+.text, td, input {
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0px;
+}
+
+.large {
+    font-size: 6vw;
+}
+
+td {
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    padding: 1vw;
+    font-size: 3vw;
+    transition: border-color 0.4s;
+}
+
+input {
+    max-width: 1em;
+    background-color: transparent;
+    border: none;
+    font-size: 3vw;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+.definition {
+    font-size: 1.5vw;
+}
+
+table {
+    margin: auto;
+}
+
+#reveal {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: transparent;
+    border-color: red;
+    border-style: solid;
+    border-radius: 10px;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+#reveal:active {
+    border-color: rgb(167, 0, 0);
+}
+
+.wrong {
+    border-color: red;
+}
+
+#rotate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

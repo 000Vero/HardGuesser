@@ -18,7 +18,7 @@ body, html {
 }
 
 .large {
-    font-size: 6vw;
+    font-size: 3.5rem;
 }
 
 td {
@@ -26,7 +26,6 @@ td {
     border-color: white;
     border-radius: 5px;
     padding: 1vw;
-    font-size: 3vw;
     transition: border-color 0.4s;
 }
 
@@ -34,7 +33,7 @@ input {
     max-width: 1em;
     background-color: transparent;
     border: none;
-    font-size: 3vw;
+    font-size: 3cqw;
     text-align: center;
 }
 
@@ -43,7 +42,7 @@ input:focus {
 }
 
 .definition {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
 }
 
 table {
@@ -61,7 +60,7 @@ table {
     border-color: red;
     border-style: solid;
     border-radius: 10px;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
@@ -71,11 +70,4 @@ table {
 
 .wrong {
     border-color: red;
-}
-
-#rotate {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }

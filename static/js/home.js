@@ -9,20 +9,7 @@ var points = 0;
 
 var currentWord;
 
-window.onresize = windowCheck;
-windowCheck();
-
 gameCycle();
-
-function windowCheck() {
-    if (window.innerHeight > window.innerWidth) {
-        document.getElementById("container").style.display = "none";
-        document.getElementById("rotate").style.display = "block";
-    } else {
-        document.getElementById("container").style.display = "block";
-        document.getElementById("rotate").style.display = "none";
-    }
-}
 
 async function gameCycle() {
     let valid = await newWord();
@@ -107,7 +94,7 @@ async function newWord() {
         }
     }
 
-    defList.innerHTML = `<span class="text" style="font-size: 2vw;">Definition(s)</span>`;
+    defList.innerHTML = `<span class="text" style="font-size: 1.8rem;">Definition(s)</span>`;
 
     try {
         for (let def of definitions) {
@@ -117,7 +104,7 @@ async function newWord() {
         defList.innerHTML += `<li class="text definition">${data[0].meanings[0].definition}</li>`;
     }
 
-    if (synonyms.length > 0) defList.innerHTML += `<span class="text" style="font-size: 2vw;">Synonym(s)</span>`;
+    if (synonyms.length > 0) defList.innerHTML += `<span class="text" style="font-size: 1.8rem;">Synonym(s)</span>`;
 
     for (let synonym of synonyms) {
         defList.innerHTML += `<li class="text definition">${synonym}</li>`;
